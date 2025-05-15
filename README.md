@@ -1,5 +1,7 @@
 # AnalyticDB for MySQL MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@yangruoyuluke/alibabacloud-adb-mysql-mcp-server)](https://smithery.ai/server/@yangruoyuluke/alibabacloud-adb-mysql-mcp-server)
+
 AnalyticDB for MySQL MCP Server serves as a universal interface between AI Agents and [AnalyticDB for MySQL](https://www.alibabacloud.com/en/product/analyticdb-for-mysql) databases. It enables seamless communication between AI Agents and AnalyticDB for MySQL, helping AI Agents
 retrieve AnalyticDB for MySQL database metadata and execute SQL operations.
 
@@ -7,13 +9,13 @@ retrieve AnalyticDB for MySQL database metadata and execute SQL operations.
 
 ### Mode 1: Using Local File
 
-- #### Download the GitHub repository
+#### Download the GitHub repository
 
 ```shell
 git clone https://github.com/aliyun/alibabacloud-adb-mysql-mcp-server
 ```
 
-- #### MCP Integration
+#### MCP Integration
 
 Add the following configuration to the MCP client configuration file:
 
@@ -42,7 +44,7 @@ Add the following configuration to the MCP client configuration file:
 
 ### Mode 2: Using PIP Mode
 
-- #### Installation
+#### Installation
 
 Install MCP Server using the following package:
 
@@ -50,7 +52,7 @@ Install MCP Server using the following package:
 pip install adb-mysql-mcp-server
 ```
 
--  #### MCP Integration
+#### MCP Integration
 
 Add the following configuration to the MCP client configuration file:
 
@@ -104,28 +106,28 @@ uv --directory /path/to/alibabacloud-adb-mysql-mcp-server run adb-mysql-mcp-serv
 
 ## 3. Introduction to the components of AnalyticDB for MySQL MCP Server
 
-- ### Tools
+### Tools
 
-    - `execute_sql`: Execute a SQL query in the AnalyticDB for MySQL Cluster
+- `execute_sql`: Execute a SQL query in the AnalyticDB for MySQL Cluster
 
-    - `get_query_plan`: Get the query plan for a SQL query
+- `get_query_plan`: Get the query plan for a SQL query
 
-    - `get_execution_plan`: Get the actual execution plan with runtime statistics for a SQL query
+- `get_execution_plan`: Get the actual execution plan with runtime statistics for a SQL query
 
-- ### Resources
+### Resources
 
-    - #### Built-in Resources
+#### Built-in Resources
 
-        - `adbmysql:///databases`: Get all the databases in the analytic for mysql cluster
+- `adbmysql:///databases`: Get all the databases in the analytic for mysql cluster
 
-    - #### Resource Templates
+#### Resource Templates
 
-        - `adbmysql:///{schema}/tables`: Get all the tables in a specific database
+- `adbmysql:///{schema}/tables`: Get all the tables in a specific database
 
-        - `adbmysql:///{database}/{table}/ddl`: Get the DDL script of a table in a specific database
+- `adbmysql:///{database}/{table}/ddl`: Get the DDL script of a table in a specific database
 
-        - `adbmysql:///{config}/{key}/value`: Get the value for a config key in the cluster
+- `adbmysql:///{config}/{key}/value`: Get the value for a config key in the cluster
 
-- ### Prompts
+### Prompts
 
 Not provided at the present moment.
