@@ -1,0 +1,49 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - adbMysqlHost
+      - adbMysqlPort
+      - adbMysqlUser
+      - adbMysqlPassword
+      - adbMysqlDatabase
+    properties:
+      adbMysqlHost:
+        type: string
+        description: AnalyticDB for MySQL host
+      adbMysqlPort:
+        type: string
+        description: AnalyticDB for MySQL port
+      adbMysqlUser:
+        type: string
+        description: AnalyticDB for MySQL user
+      adbMysqlPassword:
+        type: string
+        description: AnalyticDB for MySQL password
+      adbMysqlDatabase:
+        type: string
+        description: AnalyticDB for MySQL database
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'adb-mysql-mcp-server',
+      args: [],
+      env: {
+        ADB_MYSQL_HOST: config.adbMysqlHost,
+        ADB_MYSQL_PORT: config.adbMysqlPort,
+        ADB_MYSQL_USER: config.adbMysqlUser,
+        ADB_MYSQL_PASSWORD: config.adbMysqlPassword,
+        ADB_MYSQL_DATABASE: config.adbMysqlDatabase,
+      }
+    })
+  exampleConfig:
+    adbMysqlHost: 127.0.0.1
+    adbMysqlPort: "3306"
+    adbMysqlUser: admin
+    adbMysqlPassword: password
+    adbMysqlDatabase: testdb
